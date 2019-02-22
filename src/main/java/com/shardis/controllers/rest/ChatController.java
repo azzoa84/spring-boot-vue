@@ -27,7 +27,7 @@ public class ChatController {
     @RequestMapping(path = "/post", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
     ChatMessage jsonCreate(@RequestBody ChatMessage chatMessage) throws IOException {
-        log.info("Message received -> resending to " + sseEmitters.size() + " client(s)");
+        //log.info("Message received -> resending to " + sseEmitters.size() + " client(s)");
         synchronized (sseEmitters) {
             for (SseEmitter sseEmitter : sseEmitters) {
                 sseEmitter.send(chatMessage, MediaType.APPLICATION_JSON);
@@ -41,11 +41,11 @@ public class ChatController {
         SseEmitter sseEmitter = new SseEmitter(TimeUnit.MINUTES.toMillis(1));
         synchronized (sseEmitters) {
             this.sseEmitters.add(sseEmitter);
-            log.info("Client connected");
+            //log.info("Client connected");
             sseEmitter.onCompletion(() -> {
                 synchronized (sseEmitters) {
                     sseEmitters.remove(sseEmitter);
-                    log.info("Client disconnected");
+                    //log.info("Client disconnected");
                 }
             });
         }

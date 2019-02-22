@@ -1,4 +1,4 @@
-package com.shardis.controllers.error;
+/*package com.shardis.controllers.error;
 
 import com.google.common.collect.Lists;
 import com.shardis.dto.error.ServerErrorDTO;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
+*//**
  * Created by Tomasz Kucharzyk
- */
+ *//*
 
 @Slf4j
 @ControllerAdvice
@@ -38,7 +38,8 @@ public class ErrorHandlerController {
     @ResponseBody
     public ServerErrorDTO processException(Exception ex) {
         log.error(ex.getMessage(),ex);
-        return new ServerErrorDTO(ex.getClass().getCanonicalName(), ex.getMessage(), Lists.newArrayList());
+        return new ServerErrrorDTO(ex.getClass().getCanonicalName(), ex.getMessage(), Lists.newArrayList());
     }
 
 }
+*/

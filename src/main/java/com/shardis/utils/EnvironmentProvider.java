@@ -1,4 +1,4 @@
-package com.shardis.utils;
+/*package com.shardis.utils;
 
 import com.shardis.cons.Profiles;
 import org.springframework.cache.annotation.Cacheable;
@@ -6,9 +6,9 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-/**
+*//**
  * Created by Tomasz Kucharzyk
- */
+ *//*
 @Component
 public class EnvironmentProvider implements EnvironmentAware {
 
@@ -29,3 +29,4 @@ public class EnvironmentProvider implements EnvironmentAware {
         EnvironmentProvider.environment = environment;
     }
 }
+*/

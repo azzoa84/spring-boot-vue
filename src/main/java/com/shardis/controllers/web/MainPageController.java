@@ -1,6 +1,6 @@
 package com.shardis.controllers.web;
 
-import com.shardis.utils.EnvironmentProvider;
+//import com.shardis.utils.EnvironmentProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -16,16 +16,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class MainPageController {
 
-    @Autowired
-    EnvironmentProvider environmentProvider;
+    /*@Autowired
+    EnvironmentProvider environmentProvider;*/
 
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping("/")
     public ModelAndView mainPage() {
-        if (environmentProvider.isProduction()) {
+    	return new ModelAndView("forward://dist/index.html");
+        /*if (environmentProvider.isProduction()) {
             return new ModelAndView("forward://dist/index.html");
         } else {
             return new ModelAndView("forward://index.html");
-        }
+        }*/
     }
 }
